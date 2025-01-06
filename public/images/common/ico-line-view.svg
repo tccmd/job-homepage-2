@@ -1,0 +1,13 @@
+<svg width="100%" height="100%" viewBox="0 0 72 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="ico-line-view" clip-path="url(#clip0_508_74)">
+        <rect id="Rectangle 31" x="0.5" y="0.5" width="71" height="47" stroke="white" />
+        <rect id="Rectangle 32" x="19" y="21" width="6" height="6" fill="white" />
+        <rect id="Rectangle 33" x="33" y="21" width="6" height="6" fill="white" />
+        <rect id="Rectangle 34" x="47" y="21" width="6" height="6" fill="white" />
+    </g>
+    <defs>
+        <clipPath id="clip0_508_74">
+            <rect width="72" height="48" fill="white" />
+        </clipPath>
+    </defs>
+</svg>

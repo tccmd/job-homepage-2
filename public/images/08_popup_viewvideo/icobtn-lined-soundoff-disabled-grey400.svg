@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="64" height="64" fill="black" fill-opacity="0.24"/>
+<path d="M23.5898 35.7504L23.3185 35.6H23.0082H17.2V32V28.4H23.5H23.8209L24.0989 28.2398L34.8 22.076V32V41.963L23.5898 35.7504Z" stroke="#595959" stroke-width="2.4"/>
+<rect width="2" height="20" transform="matrix(1 0 0 -1 43 40)" fill="#595959"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 0 0 -1 40 44)" fill="#595959"/>
+</svg>
