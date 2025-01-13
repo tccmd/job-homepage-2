@@ -22,7 +22,7 @@ export default function Home() {
   return (
 
     <main className="main">
-      {width > 768 ?
+      {/* {width > 768 ?
         <div className="container_max">
           <div className="three_d">
             <Link href="/three_d" passHref></Link>
@@ -37,11 +37,12 @@ export default function Home() {
             <Link href="/interview" passHref></Link>
           </div>
         </div>
-        : <div className="container_max mobile">
+        :  */}
+        <div className="container_max mobile">
           <img src="/images/01_home/logo.svg" alt="" />
           <div>{loem.short}</div>
         </div>
-      }
+      {/* } */}
     </main>
   )
 }

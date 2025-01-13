@@ -61,7 +61,7 @@ const AboutPage = () => {
           <Link
             href={{
               pathname: '/video',
-              query: { videoName: 'allrounder_promotion' },
+              query: { videoName: 'parameter' },
             }}
             passHref>
             <button className="page_btn view_btn about_btn">

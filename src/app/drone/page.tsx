@@ -23,7 +23,7 @@ const DronePage = () => {
                 <Link
                     href={{
                         pathname: '/video',
-                        query: { 'videoName': 'drone' },
+                        query: { 'videoName': 'parameter' },
                     }}
                     passHref>
                     <button className="page_btn view_btn">

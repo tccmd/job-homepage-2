@@ -26,7 +26,7 @@ const InterviewPage = () => {
                 <Link
                     href={{
                         pathname: '/video',
-                        query: { videoName: 'marketing' },
+                        query: { videoName: 'parameter' },
                     }}
                     passHref>
                     <button className="page_btn view_btn">

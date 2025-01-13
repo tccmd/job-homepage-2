@@ -7,19 +7,19 @@ import { Suspense } from 'react'
 import { NavigationEvents } from './components/navigation-events'
 
 export const metadata: Metadata = {
-  title: '회사 이름',
+  title: 'Job Homepage 2',
   description: '설명',
   keywords: '키워드, 키워드, 키워드',
   openGraph: {
     type: "website",
-    url: "allrounder-vercel-psi.vercel.app",
-    title: "올라운더 All Rounder 3D studio",
+    url: "job-homepage-2.vercel.app",
+    title: "job homepage 2",
     description: "오픈그래프 설명",
     siteName: "사이트 이름",
     images: [{
-      url: "allrounder-vercel-psi.vercel.app/logo11.svg",
+      url: "job-homepage-2.vercel.app/logo.svg",
     },
-    { url: "allrounder-vercel-psi.vercel.app/logo10.svg", }
+    { url: "job-homepage-2.vercel.app/logo.svg", }
     ],
   },
   icons: [{ rel: 'icon', url: Favicon.src }],

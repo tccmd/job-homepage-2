@@ -5,6 +5,8 @@
 
 .main {
   background: url(/images/01_home/mo_main_visual.webp) no-repeat center center/contain;
+  background-size: cover;
+  background-position: center center;
   height: 100vh;
   height: 100dvh;
 
@@ -118,6 +120,68 @@
       }
 
       img {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  @include tablet {
+    @include flex;
+    background: url(/images/01_home/mo_main_visual.webp) no-repeat center center/cover;
+
+    &::before {
+      content: "";
+      @include position(absolute, 0 0 0 0, 0, 0, 0);
+      background: rgba($color: #000, $alpha: 0.72) no-repeat center center/contain;
+    }
+
+    .container_max {
+      @include long-body1;
+      padding: 0 24px;
+      text-align: center;
+
+      &.mobile {
+        display: block;
+      }
+
+      img,
+      div {
+        position: relative;
+        z-index: 1;
+      }
+
+      img {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  @include laptop {
+    @include flex;
+    background: url(/images/01_home/mo_main_visual.webp) no-repeat center center/cover;
+
+    &::before {
+      content: "";
+      @include position(absolute, 0 0 0 0, 0, 0, 0);
+      background: rgba($color: #000, $alpha: 0.72) no-repeat center center/contain;
+    }
+
+    .container_max {
+      @include long-body1;
+      padding: 0 24px;
+      text-align: center;
+      max-width: 55rem;
+
+      &.mobile {
+        display: block;
+      }
+
+      img,
+      div {
+        position: relative;
+        z-index: 1;
+      }
+
+      img {
+        width: 15rem;
         margin-bottom: 24px;
       }
     }
