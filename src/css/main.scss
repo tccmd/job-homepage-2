@@ -9,181 +9,32 @@
   background-position: center center;
   height: 100vh;
   height: 100dvh;
+  @include flex;
+  @include position(absolute, 0 0 0 0, 0, 0, -1);
 
   &::before {
     content: "";
-    @include position(absolute, 0 0 0 0, 0, 0, -1);
-    background: url(/images/01_home/mo_main_visual.web) no-repeat center center/contain;
-    opacity: 1;
+    @include position(absolute, 0 0 0 0, 0, 0, 0);
+    background: rgba($color: #000, $alpha: 0.72) no-repeat center center/contain;
   }
-
 
   .container_max {
     img {
-      display: block;
-      margin: 0 auto;
+      width: 300px;
     }
 
-    &.mobile {
-      display: none;
-    }
+    @include long-body1;
+    padding: 0 24px;
+    text-align: center;
 
+    img,
     div {
-      position: absolute;
+      position: relative;
       z-index: 1;
-
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        // background: rgba($color: #fff, $alpha: 0.72);
-      }
-
-      &.three_d {
-        inset: 22.22% 38% auto auto;
-        width: 7.81%;
-        height: 18.52%;
-      }
-
-      @keyframes moving {
-        10% {
-          transform: translate(-20%, 0) rotate(0deg);
-        }
-
-        30% {
-          transform: translate(-30%, 20%) rotate(-45deg);
-        }
-
-        50% {
-          transform: translate(-40%, 40%) rotate(-90deg);
-        }
-
-        83% {
-          transform: translate(-30%, 140%) rotate(-150deg);
-        }
-
-        92% {
-          transform: translate(-24%, 150%) rotate(-180deg);
-        }
-
-        100% {
-          transform: translate(-20%, 150%) rotate(-180deg);
-        }
-      }
-
-      &.drone {
-        inset: 27% auto auto 26%;
-        width: 9.38%;
-        height: 13.89%;
-        transform: translate(0, 0) rotate(0deg);
-        animation: moving 1.2s infinite alternate linear;
-      }
-
-      &.interview {
-        inset: 36.11% 25% auto auto;
-        width: 13.02%;
-        height: 15.74%;
-      }
-
-      &.camcorder {
-        inset: 42.6% auto auto 38%;
-        width: 7.81%;
-        height: 18.52%;
-      }
-
-    }
-  }
-
-  @include mobile {
-    @include flex;
-    background: url(/images/01_home/mo_main_visual.webp) no-repeat center center/cover;
-
-    &::before {
-      content: "";
-      @include position(absolute, 0 0 0 0, 0, 0, 0);
-      background: rgba($color: #000, $alpha: 0.72) no-repeat center center/contain;
     }
 
-    .container_max {
-      @include long-body1;
-      padding: 0 24px;
-      text-align: center;
-
-      &.mobile {
-        display: block;
-      }
-
-      img,
-      div {
-        position: relative;
-        z-index: 1;
-      }
-
-      img {
-        margin-bottom: 24px;
-      }
-    }
-  }
-  @include tablet {
-    @include flex;
-    background: url(/images/01_home/mo_main_visual.webp) no-repeat center center/cover;
-
-    &::before {
-      content: "";
-      @include position(absolute, 0 0 0 0, 0, 0, 0);
-      background: rgba($color: #000, $alpha: 0.72) no-repeat center center/contain;
-    }
-
-    .container_max {
-      @include long-body1;
-      padding: 0 24px;
-      text-align: center;
-
-      &.mobile {
-        display: block;
-      }
-
-      img,
-      div {
-        position: relative;
-        z-index: 1;
-      }
-
-      img {
-        margin-bottom: 24px;
-      }
-    }
-  }
-  @include laptop {
-    @include flex;
-    background: url(/images/01_home/mo_main_visual.webp) no-repeat center center/cover;
-
-    &::before {
-      content: "";
-      @include position(absolute, 0 0 0 0, 0, 0, 0);
-      background: rgba($color: #000, $alpha: 0.72) no-repeat center center/contain;
-    }
-
-    .container_max {
-      @include long-body1;
-      padding: 0 24px;
-      text-align: center;
-      max-width: 55rem;
-
-      &.mobile {
-        display: block;
-      }
-
-      img,
-      div {
-        position: relative;
-        z-index: 1;
-      }
-
-      img {
-        width: 15rem;
-        margin-bottom: 24px;
-      }
+    img {
+      margin-bottom: 24px;
     }
   }
 }
@@ -935,6 +786,7 @@
 
   .container {
     @include flex(row, center, flex-start);
+    padding-top: 80px;
 
     &>div {
       flex: 1 0 50%;
@@ -1011,17 +863,22 @@
     }
   }
 
-  .contact_left_right_container {
+  .contact_left_right {
+    .fix_height {
+      height: 460px;
+      padding-bottom: 48px;
+    }
+
     .agree_textarea {
       @include long-body1;
       overflow: auto;
       width: 100%;
-      height: 424px;
+      height: -webkit-fill-available; // 424px;
       padding: 32px 0 32px 32px;
       border: 1px solid var(--color-grey-grey-600, #3D3D3D);
       background-color: transparent;
       resize: none;
-      margin-bottom: 56px;
+      // margin-bottom: 48px;
 
       &:focus {
         outline: none;
@@ -1078,6 +935,7 @@
         @include position(absolute, 50% 24px auto auto, 0, -50%, 0);
         width: 32px;
         height: 32px;
+        cursor: pointer;
       }
     }
 
@@ -1117,7 +975,7 @@
       background-color: transparent;
       resize: none;
       overflow-y: scroll;
-      margin: 24px 0 48px 0;
+      margin: 24px 0 0 0 ; // 48px 0;
 
       &::placeholder {
         color: var(--color-grey-grey-600, #3D3D3D);
@@ -1176,11 +1034,15 @@
       }
     }
 
-    .contact_left_right_container {
+    .contact_left_right {
+      .fix_height {
+        height: 400px;
+        // background-color: pink;
+      }
 
       // Agree
       .agree_textarea {
-        height: 30vh;
+        // height: 30vh;
         padding: 20px;
       }
 
@@ -1200,7 +1062,7 @@
       }
 
       .form_textarea {
-        height: 20vh;
+        // height: 20vh;
         padding: 20px;
         margin: 20px 0 40px 0;
       }
@@ -1228,7 +1090,7 @@
         }
       }
 
-      .contact_left_right_container {
+      .contact_left_right {
         .btn_fill_large {
           position: static;
         }
@@ -1303,7 +1165,7 @@
       }
     }
 
-    .contact_left_right_container {
+    .contact_left_right {
       .agree_textarea {
         height: 50vh;
         padding: 20px;
@@ -1359,7 +1221,7 @@
         height: 208px;
         padding: 20px;
         background-color: transparent;
-        margin: 16px 0 40px 0;
+        margin: 16px 0 0 0; // 16px 0 40px 0;
       }
     }
   }

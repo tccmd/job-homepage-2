@@ -26,21 +26,23 @@ const Agree = ({ onAgree }: any) => {
     }, [isScrolledToBottom]);
 
 
-    const term = loem.describe
+    const term = loem.long;
 
     return (
         <div>
             <div className='contact_heading2'>{loem.title}</div>
-            <textarea
-                ref={textareaRef}
-                name="term"
-                id="term"
-                value={term}
-                readOnly
-                className="agree_textarea"
-            />
+            <div className='fix_height'>
+                <textarea
+                    ref={textareaRef}
+                    name="term"
+                    id="term"
+                    value={term}
+                    readOnly
+                    className="agree_textarea"
+                />
+            </div>
             <button
-                onClick={()=>onAgree()}
+                onClick={() => onAgree()}
                 className="btn_fill_large"
                 disabled={!isScrolledToBottom}
                 area-aria-label='동의하기'

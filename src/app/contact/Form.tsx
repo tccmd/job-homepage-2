@@ -67,32 +67,34 @@ export const Form = () => {
     }
 
     return (
-        <>
+        <div>
             <div className='contact_heading2'>문의 내용</div>
-            <form ref={form} onSubmit={sendEmail} name='myform' onChange={() => { validate() }} >
-                <div className='contact_input_wrap'>
-                    <input type="text" name="customer_name" className='input' autoComplete='off' placeholder="성함/업체명을 입력해주세요." />
-                    <input type="text" name="phone" className='input' autoComplete='off' placeholder="연락처를 입력해 주세요." />
-                </div>
-                <div className="select_wrap">
-                    <input name="inquiry" className='select' value={selectedOption || ''} readOnly onClick={() => toggleOptions()} placeholder="문의 유형을 선택해 주세요." />
-                    {isOpen ? <ArrowUp /> : <ArrowDown />}
-                </div>
-                {isOpen && (
-                    <ul role='select' className='option'>
-                        {options.map((option, index) => (
-                            <li role='option' className='options' key={index} onClick={() => handleOptionClick(option)}>
-                                {option}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-                <textarea name="detail" className='form_textarea' placeholder="문의 내용을 입력해 주세요." />
-                <button type="submit" disabled={!isvalidated} className="btn_fill_large">
-                    <span className='btn2_large'>Send</span>
-                    <ViewBtn />
-                </button>
-            </form>
-        </>
+            <div className='fix_height'>
+                <form ref={form} onSubmit={sendEmail} name='myform' onChange={() => { validate() }} >
+                    <div className='contact_input_wrap'>
+                        <input type="text" name="customer_name" className='input' autoComplete='off' placeholder="성함/업체명을 입력해주세요." />
+                        <input type="text" name="phone" className='input' autoComplete='off' placeholder="연락처를 입력해 주세요." />
+                    </div>
+                    <div className="select_wrap" onClick={() => toggleOptions()} placeholder="문의 유형을 선택해 주세요.">
+                        <input name="inquiry" className='select' value={selectedOption || ''} readOnly />
+                        {isOpen ? <ArrowUp /> : <ArrowDown />}
+                    </div>
+                    {isOpen && (
+                        <ul role='select' className='option'>
+                            {options.map((option, index) => (
+                                <li role='option' className='options' key={index} onClick={() => handleOptionClick(option)}>
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                    <textarea name="detail" className='form_textarea' placeholder="문의 내용을 입력해 주세요." />
+                </form>
+            </div>
+            <button type="submit" disabled={!isvalidated} className="btn_fill_large">
+                <span className='btn2_large'>Send</span>
+                <ViewBtn />
+            </button>
+        </div>
     );
 };

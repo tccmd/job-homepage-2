@@ -84,7 +84,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <div className='contact_left_right_container'>
+        <div className='contact_left_right'>
           <div className='tit'>INQUIRY</div>
           {showForm ? <Form /> : <Agree onAgree={toggleForm} />}
         </div>
